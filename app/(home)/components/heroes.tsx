@@ -2,14 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { Loader } from "@/components/ui/loader";
+import { useConvexAuth } from "convex/react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 export const Heroes = () => {
-    const isAuthenticated = false;
-    const isLoading = false;
+    const { isAuthenticated, isLoading } = useConvexAuth();
     return (
         <>
             <div className="max-w-3xl space-y-4">
@@ -24,7 +24,6 @@ export const Heroes = () => {
                         <Loader />
                     </div>
                 )}
-
                 {isAuthenticated && !isLoading && (
                     <Button asChild>
                         <Link href={"/documents"}>

@@ -1,4 +1,4 @@
-import { Heroes, Clients, Pricing } from "./components";
+import { Heroes, Clients, Pricing, Footer } from "./components";
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
         <Clients />
       </div>
       <Pricing />
+      <Footer />
     </div>
   );
 }

@@ -1,11 +1,16 @@
+"use client"
 import React from 'react'
 import { Logo } from './logo'
 import { ModeToggle } from '@/components/shared/mode-toggle'
 import { Button } from '@/components/ui/button'
+import { useScrolled } from '@/hooks/use-scrolled'
+import { cn } from '@/lib/utils'
 
 export const Navbar = () => {
+    const scroll = useScrolled()
+
     return (
-        <div className='z-50 bg-background fixed top-0 flex items-center w-full p-6 justify-between'>
+        <div className={cn('z-50 bg-background fixed top-0 flex items-center w-full p-6 justify-between', scroll ? 'border-b shadow-sm' : '')}>
             <Logo />
             <div className="flex items-center gap-x-2">
                 <Button variant="ghost" size="sm">Log In</Button>

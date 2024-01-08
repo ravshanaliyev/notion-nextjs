@@ -22,7 +22,7 @@ export const Sidebar = () => {
         } else {
             reset();
         }
-    }, [isMobile]);
+    }, [isMobile, isCollapsed]);
 
     const collapse = () => {
         if (sidebarRef.current && navbarRef.current) {
